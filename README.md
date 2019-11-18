@@ -17,7 +17,7 @@
       const flash = require("connect-flash")    // Error handling
       ````
       
-    * Configurar el middleware de `express-session`:
+    * Configurar middleware de `express-session`:
       ````javascript
       app.use(session({
         secret: "our-passport-local-strategy-app",
@@ -26,7 +26,7 @@
       }))
       ````
 
-    * Serialización y deserialización de usuario:
+    * Configurar serialización y deserialización de usuario:
       ````javascript
       passport.serializeUser((user, cb) => cb(null, user._id))
       passport.deserializeUser((id, cb) => {
@@ -37,7 +37,7 @@
       })
       ````
       
-    * Configuración de estrategia:
+    * Configurar estrategia:
       ````javascript
       app.use(flash())    // Error handling
       passport.use(new LocalStrategy({ passReqToCallback: true }, (req, username, password, next) => {
@@ -57,7 +57,7 @@
       app.use(passport.session())
       ````
     
-   * Configurar endpoints para login y logout:
+   * Configurar dos endpoints para login (`.get()`y `.post()`) y uno para logout (`.get()`):
        ````javascript
        router.get("/login", (req, res) => res.render("auth/login", { "message": req.flash("error") }))
        router.post("/login", passport.authenticate("local", {
