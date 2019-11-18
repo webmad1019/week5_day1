@@ -57,20 +57,20 @@
       app.use(passport.session())
       ````
     
-    * Configurar endpoints para login y logout:
-    ````javascript
-    router.get("/login", (req, res) => res.render("auth/login", { "message": req.flash("error") }))
-    router.post("/login", passport.authenticate("local", {
-      successRedirect: "/",
-      failureRedirect: "/login",
-      failureFlash: true,
-      passReqToCallback: true
-    }))
-    router.get("/logout", (req, res) => {
-      req.logout()
-      res.redirect("/login")
-    })
-    ````
+   * Configurar endpoints para login y logout:
+       ````javascript
+       router.get("/login", (req, res) => res.render("auth/login", { "message": req.flash("error") }))
+       router.post("/login", passport.authenticate("local", {
+         successRedirect: "/",
+         failureRedirect: "/login",
+         failureFlash: true,
+         passReqToCallback: true
+       }))
+       router.get("/logout", (req, res) => {
+         req.logout()
+         res.redirect("/login")
+       })
+       ````
     
 ## Main points: protected routes
 
