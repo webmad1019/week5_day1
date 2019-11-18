@@ -74,7 +74,7 @@
     
 ## Main points: protected routes
 
-- Es posible gestionar rutas protegidas mediante la dependencia `connect-ensure-connect`
+- La dependencia `connect-ensure-connect` retorna `next()`si el usuario está logueado, ss posible gestionar asi rutas protegidas.
 - Setup:
   * Instalar y requerir `ensure-connect`
       ````javascript
