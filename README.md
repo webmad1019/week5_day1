@@ -74,9 +74,9 @@
     
 ## Main points: protected routes
 
-- La dependencia `connect-ensure-connect` retorna `next()`si el usuario está logueado, ss posible gestionar asi rutas protegidas.
+- El método `.ensureLoggedIn()` de la dependencia `connect-ensure-login` retorna `next()` si el usuario está logueado, ss posible gestionar asi rutas protegidas.
 - Setup:
-  * Instalar y requerir `ensure-connect`
+  * Instalar y requerir `connect-ensure-login`
       ````javascript
       const ensureLogin = require("connect-ensure-login");
       ````
